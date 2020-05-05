@@ -29,11 +29,26 @@
     
     <div class="members_table"> 
         <%= link_to home_top_path do %>
-            <%= image_tag 'button2',class: "members_table_button" %>
+            <%= image_tag 'button5',class: "members_table_button" %>
         <% end %>
     </div>
     
     <div class="freeword_search_block">
-    
+        <form local="true" action="/search" accept-charset="UTF-8" method="get" >
+           <input type="submit" name="commit" value="" data-disable-with="検索" class="freeword_search_button">
+           <div class="freeword_search_select_block">
+              <select name="search[model]" id="search_model"><option value="趣味">趣味</option>
+                <option value="挑戦したいこと">挑戦したいこと</option>
+                <option value="故郷">故郷</option>
+                <option value="興味">興味</option>
+                <option value="名前orニックネーム">名前orニックネーム</option>
+                <option value="学部学科">学部学科</option>
+              </select>
+              <input type="text" name="search[keyword]" id="search_keyword" value="" placeholder="知りたいことを入力してね！" size="50">
+
+           </div>
+            
+            
+        </form>
     </div>
 </div>

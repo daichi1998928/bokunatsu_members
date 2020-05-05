@@ -113,3 +113,23 @@ body{
     width: 265px;
     height: 50px;
 }
+
+
+footer{
+    width: 100%;
+    height: 250px;
+    background-color: #663300;
+}
+footer ul {
+    padding-left: 440px ;
+    padding-top: 160px;
+}
+footer ul li{
+    display: inline-block;
+    margin-right: 30px;
+    
+}
+footer ul li a{
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 30px;

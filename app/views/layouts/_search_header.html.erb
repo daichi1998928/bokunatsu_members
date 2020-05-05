@@ -1,0 +1,54 @@
+<div class="search_header_block">
+    <div class="search_narrow_block">
+    　<form local="true" action="/search_by_narrow" accept-charset="UTF-8" method="get" class="search_narrow_form">
+       <div class="search_narrow_select_block">
+         <select name="narrow_university_branch" id="university_branch">
+            <option value="支部" label="支部">支部</option>
+            <option value="独協大学支部">独協大学支部</option>
+            <option value="執行部">執行部</option>
+            <option value="武蔵野大学支部">武蔵野大学支部</option>
+        </select>
+        <select name="narrow_assigned_school" id="assigned_school">
+            <option value="" label="交流小学校"></option>
+            <option value="鵜住居小学校">鵜住居小学校</option>
+            <option value="大沢小学校">大沢小学校</option>
+            <option value="新里小学校">新里小学校</option>
+            <option value="山口小学校">山口小学校</option>
+            <option value="無所属">無所属</option>
+        </select>
+        <select name="narrow_title_of_branch" id="title_of_branch">
+            <option value="" label="役職"></option>
+            <option value="支部長">支部長</option>
+            <option value="小学校担当">小学校担当</option>
+        </select>
+       </div>
+       
+        <input type="submit" name="commit" value="" data-disable-with="" class="narrow_submit_btn">
+     </form>
+    </div>
+    
+    <div class="members_table"> 
+        <%= link_to home_top_path do %>
+            <%= image_tag 'button5',class: "members_table_button" %>
+        <% end %>
+    </div>
+    
+    <div class="freeword_search_block">
+        <form local="true" action="/search" accept-charset="UTF-8" method="get" >
+           <input type="submit" name="commit" value="" data-disable-with="検索" class="freeword_search_button">
+           <div class="freeword_search_select_block">
+              <select name="search[model]" id="search_model"><option value="趣味">趣味</option>
+                <option value="挑戦したいこと">挑戦したいこと</option>
+                <option value="故郷">故郷</option>
+                <option value="興味">興味</option>
+                <option value="名前orニックネーム">名前orニックネーム</option>
+                <option value="学部学科">学部学科</option>
+              </select>
+              <input type="text" name="search[keyword]" id="search_keyword" value="" placeholder="知りたいことを入力してね！" size="50">
+
+           </div>
+            
+            
+        </form>
+    </div>
+</div>

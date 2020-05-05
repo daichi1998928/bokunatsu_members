@@ -37,3 +37,79 @@ body{
     right: 0;
 }
 /* ここまでheader */
+
+/* ここからheader_search */
+.search_header_block{
+ width: 90%;
+ margin: 0 auto;
+ height: 300px;
+}
+.search_narrow_block{
+    width: 600px;
+    height: 230px;
+    margin-left: 140px;
+    float: left;
+}
+.search_narrow_form select{
+    display: block;
+    width: 270px;
+    height: 50px;
+    margin-top: 20px;
+    border: none;
+}
+.search_narrow_form input {
+    box-shadow: 2px 15px 20px grey;
+    border-radius: 30px;
+    border: none;
+    margin-left:50px ;
+    width: 170px;
+    height: 170px;
+    background-image: url("button4");
+    background-size: cover;
+    margin-top: 22px;
+}
+.search_narrow_select_block{
+    width: 270px;
+    float: left;
+}
+.members_table{
+    float: left;
+}
+.members_table_button{
+    width: 170px;
+    height: 170px;
+    margin-top: 40px;
+    box-shadow: 2px 15px 20px grey;
+    border-radius: 30px;
+    
+}
+.freeword_search_block{
+    display: block;
+    float: left;
+}
+.freeword_search_button{
+    background-image: url("button6");
+    box-shadow: 2px 15px 20px grey;
+    border-radius: 30px;
+    background-size: cover;
+    width: 170px;
+    height: 170px;
+    border: none;
+    margin-left: 100px;
+    margin-top: 40px;
+}
+.freeword_search_select_block{
+    float: right;
+    margin-top: 50px;
+    margin-left: 60px;
+}
+.freeword_search_select_block select{
+    display: block;
+    width: 270px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+.freeword_search_select_block input {
+    width: 265px;
+    height: 50px;
+}

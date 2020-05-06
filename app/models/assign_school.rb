@@ -1,0 +1,2 @@
+class AssignSchool < ApplicationRecord
+end

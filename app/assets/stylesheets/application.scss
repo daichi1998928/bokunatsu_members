@@ -16,6 +16,8 @@
 /* .header_img{
     width: 100%;
 } */
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 body{
     margin: 0;
 }
@@ -120,9 +122,20 @@ footer{
     height: 250px;
     background-color: #663300;
 }
+.footer_icon{
+    text-align: center;
+    font-size: 60px;
+    padding-top: 40px;
+}
+.footer_icon a{
+    text-decoration: none;
+    color: white;
+    padding-left: 40px;
+    
+}
 footer ul {
     padding-left: 440px ;
-    padding-top: 160px;
+    padding-top: 50px;
 }
 footer ul li{
     display: inline-block;

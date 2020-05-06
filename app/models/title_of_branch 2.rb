@@ -1,0 +1,2 @@
+class TitleOfBranch < ApplicationRecord
+end

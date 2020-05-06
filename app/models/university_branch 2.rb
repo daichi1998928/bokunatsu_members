@@ -1,0 +1,2 @@
+class UniversityBranch < ApplicationRecord
+end

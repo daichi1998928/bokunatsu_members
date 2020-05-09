@@ -1,0 +1,33 @@
+<div class="main_block">
+    <%= image_tag "background_mizutama",class: "main_block_background_image" %>
+    <div class="members_block">
+        <% @members.each_with_index do |member,index| %>
+            <div id="member_block_<%= index %>", class="member_block">
+                <%= image_tag "bu" %>
+                <div id="member_name_block_<%= index %>", class="member_name_block">
+                    <div class="name_sentence_block">
+                        <p class="nickname"><%= member.nickname %></p>
+                        <p class="colledge_name">駒沢大学</p>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+        
+    </div>
+</div>
+
+<script>
+    $(function(){
+        var i = 0;
+        while(i < gon.members.length){
+            const index = i;
+            $('#member_block_' + index).mouseover(function(){
+                $("#member_name_block_" + index).show();
+            }).mouseout(function(){
+                 $("#member_name_block_" + index).hide();
+            });
+            i++;
+        };
+    });
+
+</script>

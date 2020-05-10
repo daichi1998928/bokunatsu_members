@@ -1,6 +1,11 @@
 // Place all the styles related to the members controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+ }
 .main_block{
     height: 1200px;
     background-color: #FFFF99;
@@ -53,4 +58,127 @@
     height: 300px;
     border: 0.5rem solid;
     border-radius: 20px;
+}
+.sho_block{
+    width: 100%;
+}
+.show_main_block{
+    position: relative;
+    background-color:#FFFF99 ;
+    width: 80%;
+    margin: 0 auto;
+    height: 2000px;
+    z-index: 0;
+}
+.show_background_mizutama{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+.member_profile_block{
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+}
+.profile_image{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:  30px;
+}
+.profile_image img {
+    width: 90%;
+    height: 90%;
+    border-radius: 30px;
+}
+.name_block{
+    background-color: #FFFFEE;
+    width: 80%;
+    text-align: center;
+    margin: 10px auto;
+    border-radius: 30px;
+}
+.nickname{
+    font-size: 40px;
+}
+.name{
+    font-size: 30px;
+    margin: 0;
+}
+.colledge_block{
+    background-color: #FFFFEE;
+    width: 40%;
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 30px;
+}
+.colledge_block p{
+    font-size: 23px;
+    margin: 10px;
+}
+.career_block{
+    background-color: #FFFFEE;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 30px;
+}
+.career_block p{
+    font-size: 18px;
+    padding: 20px;
+    line-height: 40px;
+}
+.give_smile_block{
+    background-color: #ffffee;
+    width: 600px;
+    height: 400px;
+    border-radius: 30px;
+    margin-top: 50px;
+}
+.give_smile_block p, .join_reson_block p{
+    font-size: 28px;
+    padding: 60px;
+}
+.join_reson_block{
+    background-color: #ffffee;
+    width: 600px;
+    height: 400px;
+    border-radius: 30px;
+    margin-top: 50px;
+    margin-right: 50px;
+}
+.smile{
+    float: left;
+    margin-left: 60px;
+}
+.reason{
+    float:right;
+}
+.smile_block p, .join_reason p {
+    text-align: center;
+    /* border-bottom: solid 5px; */
+    font-size: 25px;
+    font-weight: 600;
+}
+.personalities_block{
+    height: 150px;
+    background-color: #FFFFEE;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 30px;
+}
+.personalities_block p{
+    text-align: center;
+    font-size: 20px;
+    padding: 30px;
+}
+.pesonalities{
+    width: 70%;
+    margin: 0 auto;
+}
+.pesonalities p{
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
 }

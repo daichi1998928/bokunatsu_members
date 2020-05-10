@@ -4,4 +4,8 @@ class MembersController < ApplicationController
         gon.members = @members
     end
     
+    def show
+        
+    end
+    
 end

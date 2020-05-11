@@ -70,6 +70,14 @@
     height: 2000px;
     z-index: 0;
 }
+.show_main_block_secound{
+    position: relative;
+    background-color:#FFFF99 ;
+    width: 80%;
+    margin: 0 auto;
+    height: 2300px;
+    z-index: 0;   
+}
 .show_background_mizutama{
     position: absolute;
     width: 100%;
@@ -181,4 +189,26 @@
     font-size: 25px;
     font-weight: 600;
     text-align: center;
+}
+.link_name{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+.link_block{
+    text-align: center;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 30px;
+    width: 70%;
+    height: 100px ;
+    background-color: #FFFFEE;
+}
+.link_block p{
+    font-size: 20px;
+    line-height: 100px;
+}
+.link_block a{
+    text-decoration: none;
+    color: black;
 }

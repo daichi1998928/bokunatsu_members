@@ -5,7 +5,11 @@ class MembersController < ApplicationController
     end
     
     def show
-        
+       if params[:id]== "1"
+            render "show_first"
+       elsif params[:id] == "2"
+            render "show_secound"
+        end
     end
     
 end

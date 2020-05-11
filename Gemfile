@@ -65,3 +65,4 @@ gem 'font-awesome-sass'
 gem "sassc"
 gem 'jquery-rails'
 gem 'gon'
+gem "pry-rails"

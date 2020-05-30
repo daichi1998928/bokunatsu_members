@@ -11,5 +11,13 @@ class MembersController < ApplicationController
             render "show_secound"
         end
     end
+
+    def new
+        @member = Member.new
+    end
+    
+    def create
+        binding.pry
+    end
     
 end

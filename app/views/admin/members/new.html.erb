@@ -15,10 +15,30 @@
   <p>名前（カタカナ）</p>
    <%= f.text_field :name_kana %>
  </div>
-　<div>
-  　 <p>名前（カタカナ）</p>
-   　<%= f.text_field :name_kana %>
+ <div>
+  <p>顔写真</p>
+  <%= f.attachment_field :profile_image %>
  </div>
+　<div>
+  　 <p>学部学科</p>
+   　<%= f.text_field :faculty %>
+ </div>
+ <div>
+  　 <p>これまでの経験</p>
+   　<%= f.text_field :history %>
+ <div>
+  　 <p>入会のきめて</p>
+   　<%= f.text_field :deciding_factor %>
+ </div>
+ <div>
+  　 <p>誰にどんな笑顔を届けたい</p>
+   　<%= f.text_field :objective %>
+ </div>
+ <div>
+  　 <p>印象に残った出来事</p>
+   　<%= f.text_field :episode %>
+ </div>
+ 
  
 
 

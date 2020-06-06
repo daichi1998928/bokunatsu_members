@@ -1,0 +1,26 @@
+<h1>Admin::Members#new</h1>
+<p>Find me in app/views/admin/members/new.html.erb</p>
+
+<%= form_for @new_member do |f| %>
+ <div>
+  <p>ニックネーム</p>
+  <%= f.text_field :nickname %>
+ </div>
+ <div>
+  <p>名前（フルネーム）</p>
+  <%= f.text_field :name %>
+ </div>
+ 
+ <div>
+  <p>名前（カタカナ）</p>
+   <%= f.text_field :name_kana %>
+ </div>
+　<div>
+  　 <p>名前（カタカナ）</p>
+   　<%= f.text_field :name_kana %>
+ </div>
+ 
+
+
+ <%= f.submit "登録" %>
+<% end %>

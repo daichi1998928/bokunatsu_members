@@ -1,0 +1,75 @@
+<h1>Admin::Members#new</h1>
+<p>Find me in app/views/admin/members/new.html.erb</p>
+
+<%= form_for @new_member,url: admin_members_path do |f| %>
+ 
+ <div>
+  <p>ニックネーム</p>
+  <%= f.text_field :nickname %>
+ </div>
+ <div>
+  <p>名前（フルネーム）</p>
+  <%= f.text_field :name %>
+ </div>
+ 
+ <div>
+  <p>名前（カタカナ）</p>
+   <%= f.text_field :name_kana %>
+ </div>
+ <div>
+  <p>顔写真</p>
+  <%= f.attachment_field :profile_image %>
+ </div>
+ <div>
+  <p>所属年数</p>
+  <%= f.collection_select(:grade_id, @grade, :id, :number) %>
+ </div>
+ <div>
+  <p>所属支部</p>
+  <%= f.fields_for @new_branch_member do |branches_member| %>
+     <%= branches_member.collection_select(:university_branch_id, @branch, :id, :name) %>
+  <% end %>
+ </div>
+ <div>
+  <p>支部での役割</p>
+  <%= f.collection_select(:title_of_branch_id, @title_of_branch, :id, :name) %>
+ </div>
+ <div>
+  <p>所属大学</p>
+  <%= f.collection_select(:university_id, @university, :id, :name) %>
+ </div>
+ <div>
+  <p>交流小学校</p>
+  <%= f.collection_select(:assign_school_id, @assign_school, :id, :name) %>
+ </div>
+
+　<div>
+  　 <p>学部学科</p>
+   　<%= f.text_field :faculty %>
+ </div>
+ <div>
+  　 <p>これまでの経験</p>
+   　<%= f.text_field :history %>
+ <div>
+  　 <p>入会のきめて</p>
+   　<%= f.text_field :deciding_factor %>
+ </div>
+ <div>
+  　 <p>誰にどんな笑顔を届けたい</p>
+   　<%= f.text_field :objective %>
+ </div>
+ <div>
+  　 <p>印象に残った出来事</p>
+   　<%= f.text_field :episode %>
+ </div>
+ <div>
+  　 <p>パスワード</p>
+   　<%= f.password_field :password %>
+ </div>
+ <div>
+  　 <p>パスワード確認</p>
+   　<%= f.password_field :password_confirmation %>
+ </div>
+
+ <%= f.submit "登録" %>
+<% end %>

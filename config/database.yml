@@ -18,6 +18,8 @@ default: &default
   # host: localhost # docker-compose.ymlのservice名
 development:
   <<: *default
+  adapter: sqlite3
+  database: db/development.sqlite3
   database: app_name_development
   host: localhost
 

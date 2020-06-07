@@ -3,11 +3,11 @@
     <div class="members_block">
         <% @members.each_with_index do |member,index| %>
             <div id="member_block_<%= index %>", class="member_block">
-                <%= image_tag "bu" %>
+                <%= image_tag attachment_url(member,:profile_image, :fill, 300, 300 ,fallback: "no_image.png") %>
                 <div id="member_name_block_<%= index %>", class="member_name_block">
                     <div class="name_sentence_block">
                         <p class="nickname"><%= member.nickname %></p>
-                        <p class="colledge_name">駒沢大学</p>
+                        <p class="colledge_name"></p>
                     </div>
                 </div>
             </div>

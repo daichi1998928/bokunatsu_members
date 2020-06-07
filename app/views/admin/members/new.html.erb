@@ -1,7 +1,8 @@
 <h1>Admin::Members#new</h1>
 <p>Find me in app/views/admin/members/new.html.erb</p>
 
-<%= form_for @new_member do |f| %>
+<%= form_for @new_member,url: admin_members_path do |f| %>
+ 
  <div>
   <p>ニックネーム</p>
   <%= f.text_field :nickname %>
@@ -19,6 +20,23 @@
   <p>顔写真</p>
   <%= f.attachment_field :profile_image %>
  </div>
+ <div>
+  <p>所属年数</p>
+  <%= f.collection_select(:grade_id, @grade, :id, :number) %>
+ </div>
+ <div>
+  <p>支部での役割</p>
+  <%= f.collection_select(:title_of_branch_id, @title_of_branch, :id, :name) %>
+ </div>
+ <div>
+  <p>所属大学</p>
+  <%= f.collection_select(:university_id, @university, :id, :name) %>
+ </div>
+ <div>
+  <p>交流小学校</p>
+  <%= f.collection_select(:assign_school_id, @assign_school, :id, :name) %>
+ </div>
+
 　<div>
   　 <p>学部学科</p>
    　<%= f.text_field :faculty %>
@@ -38,9 +56,14 @@
   　 <p>印象に残った出来事</p>
    　<%= f.text_field :episode %>
  </div>
- 
- 
-
+ <div>
+  　 <p>パスワード</p>
+   　<%= f.password_field :password %>
+ </div>
+ <div>
+  　 <p>パスワード確認</p>
+   　<%= f.password_field :password_confirmation %>
+ </div>
 
  <%= f.submit "登録" %>
 <% end %>

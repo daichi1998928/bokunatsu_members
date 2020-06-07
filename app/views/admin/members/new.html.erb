@@ -25,6 +25,12 @@
   <%= f.collection_select(:grade_id, @grade, :id, :number) %>
  </div>
  <div>
+  <p>所属支部</p>
+  <%= f.fields_for @new_branch_member do |branches_member| %>
+     <%= branches_member.collection_select(:university_branch_id, @branch, :id, :name) %>
+  <% end %>
+ </div>
+ <div>
   <p>支部での役割</p>
   <%= f.collection_select(:title_of_branch_id, @title_of_branch, :id, :name) %>
  </div>

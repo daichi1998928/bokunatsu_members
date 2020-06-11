@@ -8,7 +8,8 @@
 require "csv"
 
 CSV.foreach('db/seeds/assign_school.csv', headers: true) do |row|
-  unless AssignSchool.find_by(name: row["assign_school"])
+  
+  if AssignSchool.count < 20
     AssignSchool.create!(
       name: row
     )

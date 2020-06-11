@@ -8,15 +8,19 @@
 require "csv"
 
 CSV.foreach('db/seeds/assign_school.csv', headers: true) do |row|
+  unless AssignSchool.find_by(name: row["assign_school"])
     AssignSchool.create!(
       name: row
     )
+  end
 end
 
 CSV.foreach('db/seeds/university_branch.csv', headers: true) do |f|
+  unless UniversityBranch.find_by(name: f['university_branch'])
     UniversityBranch.create!(
       name: f["university_branch"],
       twitter_link: f["Twitter_url"]
     )
+  end
 end
 

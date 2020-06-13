@@ -71,5 +71,19 @@
    　<%= f.password_field :password_confirmation %>
  </div>
 
+ <div>
+  <%= f.fields_for :personalities do |form| %>
+    <%= render "personality_fields", f: form %>
+  <% end %>  
+  <%= link_to_add_association "好きなもの、性格をもっと追加", f, :personalities %>
+ </div>
+ <div>
+  <p>自分が載っている記事、SNS,ブログなど</p>
+  <%= f.fields_for :links do |form| %>
+    <%= render "link_fields", f: form %>
+  <% end %>
+  <p><%= link_to_add_association "記事を追加", f, :links %></p>
+ </div>
+
  <%= f.submit "登録" %>
 <% end %>

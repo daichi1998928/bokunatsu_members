@@ -67,6 +67,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'font-awesome-sass'
 gem "sassc"
+gem 'cocoon'
 gem 'jquery-rails'
 gem 'gon'
 gem "pry-rails"

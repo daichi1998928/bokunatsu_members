@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_06_095256) do
+ActiveRecord::Schema.define(version: 2020_06_13_042351) do
 
   create_table "assign_schools", force: :cascade do |t|
     t.string "name"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_06_06_095256) do
     t.integer "member_id"
     t.string "name"
     t.text "url"
-    t.boolean "is_bokunatsu"
+    t.boolean "is_bokunatsu", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

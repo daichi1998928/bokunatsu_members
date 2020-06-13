@@ -5,9 +5,11 @@ class MembersController < ApplicationController
     end
     
     def show
-       if params[:id]== "1"
+        @member = Member.find(params[:id])
+        binding.pry
+       if @member.grade.number == 1
             render "show_first"
-       elsif params[:id] == "2"
+       elsif @member.grade.number == 2
             render "show_secound"
         end
     end

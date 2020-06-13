@@ -25,3 +25,16 @@ CSV.foreach('db/seeds/university_branch.csv', headers: true) do |f|
   end
 end
 
+grades = [1,2,3,4]
+if Grade.count < 4
+  grades.each do |grade|
+    Grade.create(number: grade)
+  end
+end
+
+titles = ["支部長","小学校リーダー","なし"]
+if TitleOfBranch.count < 3
+  titles.each do |title|
+    TitleOfBranch.create(name: title)
+  end
+end

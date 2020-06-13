@@ -10,6 +10,8 @@ class Member < ApplicationRecord
   has_many :personalities ,dependent: :destroy
   has_many :links,dependent: :destroy
 
-  accepts_nested_attributes_for :personalities,:links, allow_destroy: true
+  accepts_nested_attributes_for :links,reject_if: proc { |attributes| attributes['name'].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :personalities,reject_if: proc { |attributes| attributes['content_name'].blank? }, allow_destroy: true
+
   # branches_membersは運営部と支部メンバーを兼ねてるメンバーがいるのでhas_many
 end

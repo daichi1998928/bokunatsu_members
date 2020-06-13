@@ -16,7 +16,6 @@ class Admin::MembersController < ApplicationController
 
   def create
     @new_member = Member.new(member_params)
-    binding.pry
     @new_member.save!
     branches_member = BranchesMember.new(university_branch_id: params[:member][:branches_member][:university_branch_id],member_id: @new_member.id)
     branches_member.save!

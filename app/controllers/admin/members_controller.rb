@@ -2,6 +2,7 @@ class Admin::MembersController < ApplicationController
   def new
     @new_member = Member.new
     @new_member.personalities.build
+    @new_member.links.build
     @new_branch_member = BranchesMember.new
     @branch = UniversityBranch.all
     @grade = Grade.all
@@ -36,7 +37,8 @@ class Admin::MembersController < ApplicationController
                                    :episode,
                                    :password,
                                    :password_confimation,
-                                   personalities_attributes: [:content_name])
+                                   personalities_attributes: [:content_name],
+                                   links_attributes: [:name,:url,:is_bokunatsu])
   
   end
 

@@ -71,5 +71,29 @@
    　<%= f.password_field :password_confirmation %>
  </div>
 
+ <div>
+  <%= f.fields_for :personalities do |p| %>
+    <p>パーソナリティー</p>
+    <%= p.text_field :content_name %>
+  <% end %>
+
+  <%= f.fields_for :personalities do |p|  %>
+    <p>パーソナリティー</p>
+    <%= p.text_field :content_name %>
+  <% end %>
+  <%= f.fields_for :personalities do |p| %>
+    <p>パーソナリティー</p>
+    <%= p.text_field :content_name %>
+  <% end %>
+  <%= f.fields_for :personalities do |p| %>
+    <p>パーソナリティー</p>
+    <%= p.text_field :content_name %>
+  <% end %>
+  <%= f.fields_for :personalities do |p| %>
+    <p>パーソナリティー</p>
+    <%= p.text_field :content_name %>
+  <% end %>  
+ </div>
+
  <%= f.submit "登録" %>
 <% end %>

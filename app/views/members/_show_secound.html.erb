@@ -3,39 +3,43 @@
        <%= image_tag "show_background_mizutama",class:"show_background_mizutama" %>
         <div class="member_profile_block">
             <div class="profile_image">
-                <%= image_tag "yu" %>
+                <%= image_tag attachment_url(member,:profile_image, :fill, 300, 300 ,fallback: "no_image.png") %>
             </div>
             <div class="name_block">
                 <p class="nickname">
-                    ゆうだい
+                    <%= member.nickname %>
                 </p>
                 <p class="name">
-                    いしつ雄大| イシツユウダイ
+                    <%= member.name %>| <%= member.name_kana %>
                 </p>
             </div>
             <div class="colledge_block">
                 <p>
-                    東洋大学支部
+                    <%= member.university.name %><%= member.faculty %>
                 </p>
                 <p>
-                    東洋大学文学部
+                    <% if member.branches_members.count == 2 %>
+                        <% member.branches_members.each do |branch| %>
+                            <%= link_to branch.university_branch.name, branch.university_branch.twitter_link  %>|
+                        <% end %>
+                    <% else %>
+                        <%= link_to  member.branches_members.first.university_branch.name, member.branches_members.first.university_branch.twitter_link %>
+                    <% end %>
                 </p>
                 <p>
-                    僕夏4年目
+                    僕夏<%= member.grade.number %>年目
                 </p>
             </div>
             <div class="career_block">
                 <p>
-                   2017年春、僕夏に入会。会計係として活躍。
-                    2年目は東洋大学支部長として活動し、
-                    3年目は実行委員長として僕夏メンバーの指揮を取る。
+                    <%= member.history %>
                 </p>
             </div>
             <div class="clearfix">
                 <div class="smile">
                     <div class="give_smile_block">
                         <p>
-                            自己肯定感の低い子に、自分らしさに自信を持てるようになってもらいたい
+                            <%= member.objective %>
                         </p>
                     </div>
                     <div class="smile_block">
@@ -47,7 +51,7 @@
                 <div class="reason">
                     <div class="join_reson_block">
                         <p>
-                            3日間の交流であまり深く関われなかった子も、最終日に「また会おうね」って言ってくれたこと。
+                            <%= member.episode %>
                         </p>
                     </div>
                     <div class="join_reason">
@@ -61,8 +65,9 @@
             <div class="personality">
                 <div class="personalities_block">
                     <p>
-                        ・ONE PIECE ・漢方 ・ハンバーグ ・アベンジャーズ
-                        ・アンケート修正 ・一人暮らし
+                        <% member.personalities.each do |per| %>
+                            ・<%= per.content_name %>
+                        <% end %>
                     </p>
                 </div>
                 <div class="pesonalities">
@@ -72,21 +77,13 @@
             <div class="bokunatsu_links">
                 <div class="link_block">
                     <p>
-                        <%= link_to "・2019年度夏企画を振り返って","http://bokunatsu.com/2019/09/12/miyako2019/" %>
-                        <%= link_to "・実行委員長として目指すもの", "http://bokunatsu.com/2019/09/11/hunakoshi2019/"%>
+                        <% member.links.each do |link| %>
+                            <%= link_to link.name, link.url %>
+                        <% end %>
                     </p>
                 </div>
-                <p class="link_name">「僕夏・ことば」の私</p>
-            </div>
-            <div class="other_links">
-                <div class="link_block">
-                    <p>
-                        <%= link_to "・note","https://note.com/daichi_tennis" %>
-                    </p>
-                </div>
-                <p class="link_name">「他の場面/場所」の私</p>
-            </div>    
-            
+                <p class="link_name"> link集 </p>
+            </div>   
         </div>
     </div>
 </div>

@@ -1,0 +1,5 @@
+<% if @member.grade.number == 1%>
+  <%= render partial: "show_first",locals: { member: @member } %>
+<% else %>
+  <%= render partial: "show_secound",locals: { member: @member } %>
+<% end %>

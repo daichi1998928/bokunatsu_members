@@ -1,8 +1,10 @@
-<h1>Admin::Members#new</h1>
-<p>Find me in app/views/admin/members/new.html.erb</p>
+<p>メンバー情報入力フォーム</p>
+<p>パスワードは入力してね！入力しないとエラーがでます。</p>
+
 
 <%= form_for @new_member,url: admin_members_path do |f| %>
- 
+
+  <%= render 'error', model: f.object %>
  <div>
   <p>ニックネーム</p>
   <%= f.text_field :nickname %>

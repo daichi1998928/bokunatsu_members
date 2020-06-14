@@ -1,4 +1,9 @@
 class Admin::MembersController < ApplicationController
+
+  def index
+    redirect_to new_admin_member_path
+  end
+  
   def new
     @new_member = Member.new
     @new_member.personalities.build
@@ -16,9 +21,22 @@ class Admin::MembersController < ApplicationController
 
   def create
     @new_member = Member.new(member_params)
-    @new_member.save!
-    branches_member = BranchesMember.new(university_branch_id: params[:member][:branches_member][:university_branch_id],member_id: @new_member.id)
-    branches_member.save!
+    if @new_member.save
+      redirect_to member_path(@new_member)
+      branches_member = BranchesMember.new(university_branch_id: params[:member][:branches_member][:university_branch_id],member_id: @new_member.id)
+      branches_member.save!
+    else
+      @new_member.personalities.build
+      @new_member.links.build
+      @new_branch_member = BranchesMember.new
+      @branch = UniversityBranch.all
+      @grade = Grade.all
+      @title_of_branch = TitleOfBranch.all
+      @university = University.all
+      @assign_school = AssignSchool.all
+      render "new"
+    end
+    
   end
 
   def member_params

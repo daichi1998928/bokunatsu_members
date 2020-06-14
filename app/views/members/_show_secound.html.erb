@@ -15,16 +15,15 @@
             </div>
             <div class="colledge_block">
                 <p>
-                    <%= member.university.name %>
+                    <%= member.university.name %><%= member.faculty %>
                 </p>
                 <p>
                     <% if member.branches_members.count == 2 %>
                         <% member.branches_members.each do |branch| %>
-                            <%= link_to branch.university_branch.name, branch.university_branch.twitter_link  %>
-                            |<%=  %>
+                            <%= link_to branch.university_branch.name, branch.university_branch.twitter_link  %>|
                         <% end %>
                     <% else %>
-                        <%= member.branches_members.first.university_branch.name %>
+                        <%= link_to  member.branches_members.first.university_branch.name, member.branches_members.first.university_branch.twitter_link %>
                     <% end %>
                 </p>
                 <p>

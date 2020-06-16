@@ -1,4 +1,6 @@
 class Admin::MembersController < ApplicationController
+  
+  before_action :current_member, only: [:edit,:update]
 
   def index
     redirect_to new_admin_member_path
@@ -17,6 +19,18 @@ class Admin::MembersController < ApplicationController
   end
 
   def edit
+    if @current_member.id != params[:id].to_i
+      redirect_to root_path, notice: "他の人の編集ページにはいけません"
+    end 
+
+    @edit_member = Member.find(params[:id])
+    @new_branch_member = BranchesMember.new
+    @branch = UniversityBranch.all
+    @grade = Grade.all
+    @title_of_branch = TitleOfBranch.all
+    @university = University.all
+    @assign_school = AssignSchool.all
+
   end
 
   def create
@@ -39,6 +53,16 @@ class Admin::MembersController < ApplicationController
     
   end
 
+  def update
+    member = Member.find(params[:id])
+    
+    binding.pry
+    if member.update(update_params)
+      redirect_to member_path(member)
+    end
+  end
+  
+  private
   def member_params
     params.require(:member).permit(:title_of_branch_id,
                                    :university_id,:grade_id,
@@ -59,6 +83,23 @@ class Admin::MembersController < ApplicationController
   
   end
 
+  def update_params
+    params.require(:member).permit(:title_of_branch_id,
+                                  :university_id,:grade_id,
+                                  :assign_school_id,
+                                  :name,
+                                  :name_kana,
+                                  :profile_image,
+                                  :nickname,
+                                  :faculty,
+                                  :history,
+                                  :deciding_factor,
+                                  :objective,
+                                  :episode,
+                                  :password,
+                                  :password_confimation)
+  end
+  
   def branches_members_params
     params.require(:branches_member).permit(:university_branch_id)
   end
